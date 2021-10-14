@@ -7,9 +7,10 @@ var token = localStorage.getItem('token');
         type: 'GET',
         headers: {"Authorization": "Bearer "+token},
       success:function(response) {
-        console.log(response);
+        $('#welcomeMessage').html(response);
       },
       error:function() {
+        $(location).prop('href', 'index.html');
           window.location.href='index.html';
       }
       });
@@ -20,7 +21,3 @@ var token = localStorage.getItem('token');
           window.location.href='index.html';
         });
       });
-
-      
-
-
